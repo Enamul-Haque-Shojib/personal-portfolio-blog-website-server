@@ -7,8 +7,8 @@ import { AuthRole } from './Auth.constant';
 
 
 export type TAuth = {
-  authName?: string;
-  authImgUrl?: string;
+  name?: string;
+  image?: string;
   email: string;
   password: string;
   role: 'User';

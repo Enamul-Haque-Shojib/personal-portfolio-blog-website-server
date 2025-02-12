@@ -31,12 +31,7 @@ const updateSingleBlogIntoDB = async (id: string, payload: Partial<TBlog>) => {
       'Blog Does not exists',
     );
   }
-  if (await BlogModel.isBlogDeleted(id)) {
-    throw new AppError(
-      400,
-      `Blog does not exists because it is already deleted`,
-    );
-  }
+ 
 
   const result = await BlogModel.findByIdAndUpdate(id, payload, {
     new: true,
@@ -55,18 +50,9 @@ const deleteSingleBlogIntoDB = async (id: string) => {
     );
   }
 
-  if (await BlogModel.isBlogDeleted(id)) {
-    throw new AppError(
-      400,
-      `Blog does not exists because it is already deleted`,
-    );
-  }
+ 
 
-  const deletedBlog = await BlogModel.findByIdAndUpdate(
-    id,
-    { isDeleted: true },
-    { new: true },
-  );
+  const deletedBlog = await BlogModel.findByIdAndDelete(id);
 
   if (!deletedBlog) {
     throw new AppError(400, 'Blog could not be deleted');
@@ -75,7 +61,7 @@ const deleteSingleBlogIntoDB = async (id: string) => {
 };
 const getAllBlogsIntoDB = async (query: Record<string, unknown>) => {
   const studentQuery = new QueryBuilder(
-    BlogModel.find().populate('author'),
+    BlogModel.find(),
     query,
   )
     .search(blogSearchableFields)

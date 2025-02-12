@@ -23,6 +23,7 @@ const authRegisterIntoDB = async (payload: TAuth) => {
 };
 
 const authLoginIntoDB = async (payload: TAuth) => {
+  
   const auth = await AuthModel.isAuthExistByEmail(payload.email);
 
   if (!auth) {
@@ -51,6 +52,7 @@ const authLoginIntoDB = async (payload: TAuth) => {
   return {
     accessToken,
     refreshToken,
+    auth
   };
 };
 

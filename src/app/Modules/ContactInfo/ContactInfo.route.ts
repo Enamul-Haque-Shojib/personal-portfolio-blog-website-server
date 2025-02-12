@@ -16,7 +16,7 @@ router.post(
   ContactInfoControllers.createContactInfo,
 );
 
-router.delete('delete-contactinfo/:id', ContactInfoControllers.deleteSingleContactInfo);
+router.delete('/delete-contactinfo/:id', ContactInfoControllers.deleteSingleContactInfo);
 
 router.get('/', ContactInfoControllers.getAllContactInfo);
 

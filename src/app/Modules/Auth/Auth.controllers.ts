@@ -25,8 +25,6 @@ const authLogin = catchAsync(async (req, res) => {
     req.body,
   );
 
- 
-
   sendResponse(res, {
     statusCode: 200,
     success: true,

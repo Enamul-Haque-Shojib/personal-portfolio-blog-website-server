@@ -5,11 +5,11 @@ import bcrypt from 'bcrypt';
 
 const authSchema = new Schema<TAuth, AuthStaticModel>(
   {
-    authName: {
+    name: {
       type: String,
       default: '',
     },
-    authImgUrl: {
+    image: {
       type: String,
       default: '',
     },

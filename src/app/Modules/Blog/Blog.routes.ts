@@ -14,12 +14,12 @@ router.post(
   BlogControllers.createBlog,
 );
 router.patch(
-  '/:id',
+  '/update-blog/:id',
 
   validateRequest(BlogValidationSchema.updateBlogValidationSchema),
   BlogControllers.updateSingleBlog,
 );
-router.delete('/:id', BlogControllers.deleteSingleBlog);
+router.delete('/delete-blog/:id', BlogControllers.deleteSingleBlog);
 router.get('/', BlogControllers.getAllBlogs);
 router.get('/get-single-blog/:id', BlogControllers.getSingleBlog);
 
