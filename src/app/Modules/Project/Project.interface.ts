@@ -11,6 +11,8 @@ export type TProject = {
   description: string;
   technologies: string[];
   email: string;
+  github:string;
+  live: string;
 };
 
 export interface ProjectStaticModel extends Model<TProject> {

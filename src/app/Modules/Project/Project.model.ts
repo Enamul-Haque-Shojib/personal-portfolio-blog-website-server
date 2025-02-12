@@ -25,6 +25,14 @@ const projectSchema = new Schema<TProject, ProjectStaticModel>(
     email: {
         type: String,
         required: true,
+    },
+    github: {
+        type: String,
+        required: true,
+    },
+    live: {
+        type: String,
+        required: true,
     }
   },
   {
