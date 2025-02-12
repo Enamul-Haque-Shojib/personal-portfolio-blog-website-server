@@ -6,14 +6,7 @@ import { SkillModel } from "./Skill.model";
 
 
 const createSkillIntoDB = async (payload: TSkill) => {
-    const user = await AuthModel.findOne({ email: payload.authEmail });
 
-    if (!user) {
-      throw new AppError(
-        404,
-        'User not found'
-      );
-    }
 
     const newProject = await SkillModel.create(payload);
     return newProject;
@@ -43,10 +36,12 @@ const updateSingleSkillIntoDB = async (id: string, payload: Partial<TSkill>) => 
     }
   };
 
+  const getSingleSkillIntoDB = async (id: string) => {
+    const result = await SkillModel.find({_id: id})
+    return result;
+  };
   const getAllSkillsIntoDB = async () => {
     const result = await SkillModel.find()
-
-
     return result;
   };
 
@@ -54,5 +49,6 @@ export const SkillServices = {
     createSkillIntoDB,
     updateSingleSkillIntoDB,
     deleteSingleSkillIntoDB,
-    getAllSkillsIntoDB
+    getAllSkillsIntoDB,
+    getSingleSkillIntoDB
 }

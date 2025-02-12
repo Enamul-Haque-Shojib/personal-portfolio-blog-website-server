@@ -5,14 +5,6 @@ import { ProjectModel } from "./Project.model";
 
 
 const createProjectIntoDB = async (payload: TProject) => {
-    const user = await AuthModel.findOne({ email: payload.email });
-
-    if (!user) {
-      throw new AppError(
-        404,
-        'User not found'
-      );
-    }
 
     const newProject = await ProjectModel.create(payload);
     return newProject;

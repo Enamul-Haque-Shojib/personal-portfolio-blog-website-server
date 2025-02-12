@@ -45,6 +45,17 @@ const createSkill = catchAsync(async (req, res) => {
     });
   });
 
+  const getSingleSkills = catchAsync(async (req, res) => {
+    const result = await SkillServices.getSingleSkillIntoDB(req.params.id);
+  
+    sendResponse(res, {
+      statusCode: 201,
+      success: true,
+      message: 'single Skill is retrieved successfully',
+      data: result,
+    });
+  });
+
   const getAllSkills = catchAsync(async (req, res) => {
     const result = await SkillServices.getAllSkillsIntoDB();
   
@@ -61,5 +72,6 @@ const createSkill = catchAsync(async (req, res) => {
     createSkill,
     updateSingleSkill,
     deleteSingleSkill,
-    getAllSkills
+    getAllSkills,
+    getSingleSkills
   }

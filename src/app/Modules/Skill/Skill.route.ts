@@ -16,13 +16,14 @@ router.post(
   SkillControllers.createSkill,
 );
 router.patch(
-  'update-skill/:id',
+  '/update-skill/:id',
 
   validateRequest(SkillValidationSchema.updateSkillValidationSchema),
   SkillControllers.updateSingleSkill,
 );
-router.delete('delete-skill/:id', SkillControllers.deleteSingleSkill);
+router.delete('/delete-skill/:id', SkillControllers.deleteSingleSkill);
 
+router.get('/get-single-skill/:id', SkillControllers.getSingleSkills);
 router.get('/', SkillControllers.getAllSkills);
 
 export const SkillRoutes = router;

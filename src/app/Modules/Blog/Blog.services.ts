@@ -11,15 +11,6 @@ import { blogSearchableFields } from './Blog.constant';
 import { AuthModel } from '../Auth/Auth.model';
 
 const createBlogIntoDB = async (payload: TBlog) => {
-    const user = await AuthModel.findOne({ email: payload.email });
-
-    if (!user) {
-      throw new AppError(
-        404,
-        'User not found'
-      );
-    }
-
     const newBlog = await BlogModel.create(payload);
     return newBlog;
  

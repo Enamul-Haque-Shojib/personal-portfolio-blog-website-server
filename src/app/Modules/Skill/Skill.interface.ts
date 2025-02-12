@@ -9,7 +9,7 @@ import { Model } from "mongoose";
 export type TSkill = {
   title: string;
   skillImgUrl: string;
-  authEmail: string;
+  email: string;
 };
 
 export interface SkillStaticModel extends Model<TSkill> {

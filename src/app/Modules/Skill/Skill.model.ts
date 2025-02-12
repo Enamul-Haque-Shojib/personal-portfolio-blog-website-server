@@ -15,8 +15,7 @@ const skillSchema = new Schema<TSkill, SkillStaticModel>(
       type: String,
       required: true,
     },
- 
-    authEmail: {
+    email: {
         type: String,
         required: true,
     }
