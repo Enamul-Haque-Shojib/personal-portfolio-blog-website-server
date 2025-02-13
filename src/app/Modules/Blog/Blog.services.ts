@@ -8,7 +8,7 @@ import { BlogModel } from './Blog.model';
 
 import QueryBuilder from '../../builder/QueryBuilder';
 import { blogSearchableFields } from './Blog.constant';
-import { AuthModel } from '../Auth/Auth.model';
+
 
 const createBlogIntoDB = async (payload: TBlog) => {
     const newBlog = await BlogModel.create(payload);

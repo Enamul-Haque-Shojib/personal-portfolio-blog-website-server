@@ -1,10 +1,6 @@
 /* eslint-disable no-unused-vars */
 import { Model } from "mongoose";
 
-
-
-
-
 export type TProject = {
   projectName: string;
   projectImgUrl: string;

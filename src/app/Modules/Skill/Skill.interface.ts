@@ -2,10 +2,6 @@
 import { Model } from "mongoose";
 
 
-
-
-
-
 export type TSkill = {
   title: string;
   skillImgUrl: string;

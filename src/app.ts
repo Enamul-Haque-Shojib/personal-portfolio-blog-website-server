@@ -18,7 +18,6 @@ app.use(
   }),
 );
 
-//https://parcel-management-system-server.vercel.app/api
 
 app.use(cookieParser());
 app.use(express.json());
