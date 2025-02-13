@@ -20,7 +20,7 @@ router.post(
 
 router.patch(
   '/update-auth/:id',
-  // auth(AuthRole.Admin, AuthRole.User),
+
   validateRequest(authValidationSchema.updateAuthInfoValidationSchema),
   AuthControllers.updateAuth,
 );
@@ -32,7 +32,7 @@ router.get(
 
 router.delete(
   '/delete-auth/:id',
-  // auth(AuthRole.Admin),
+  
   AuthControllers.deleteSingleAuth,
 );
 
