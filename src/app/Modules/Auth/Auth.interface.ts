@@ -3,9 +3,6 @@ import { Model } from 'mongoose';
 import { AuthRole } from './Auth.constant';
 
 
-
-
-
 export type TAuth = {
   name?: string;
   image?: string;
