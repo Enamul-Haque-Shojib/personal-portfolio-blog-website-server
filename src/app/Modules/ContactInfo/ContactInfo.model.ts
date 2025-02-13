@@ -6,10 +6,7 @@ import { TContactInfo } from './ContactInfo.interface';
 
 const contactInfoSchema = new Schema<TContactInfo>(
   {
-    authEmail: {
-      type: String,
-      required: true,
-    },
+   
     name: {
       type: String,
       required: true,
