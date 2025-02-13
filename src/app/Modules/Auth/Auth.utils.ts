@@ -20,7 +20,6 @@ export const verifyToken = (token: string, secret: string) => {
     throw new AppError(401, 'Unauthorized!');
   }
 
-  // return jwt.verify(token, secret) as JwtPayload;
 };
 
 
