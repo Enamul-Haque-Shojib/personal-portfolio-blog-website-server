@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Model } from "mongoose";
+import { Model } from 'mongoose';
 
 export type TProject = {
   projectName: string;
@@ -7,7 +7,7 @@ export type TProject = {
   description: string;
   technologies: string[];
   email: string;
-  github:string;
+  github: string;
   live: string;
 };
 

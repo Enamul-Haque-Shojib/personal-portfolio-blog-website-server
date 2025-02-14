@@ -6,7 +6,6 @@ import { ProjectRoutes } from '../Modules/Project/Project.route';
 import { ContactInfoRoutes } from '../Modules/ContactInfo/ContactInfo.route';
 import { SkillRoutes } from '../Modules/Skill/Skill.route';
 
-
 const router = express.Router();
 
 const moduleRoutes = [
@@ -30,7 +29,6 @@ const moduleRoutes = [
     path: '/skills',
     route: SkillRoutes,
   },
- 
 ];
 
 moduleRoutes.forEach((route) => router.use(route.path, route.route));

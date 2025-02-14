@@ -3,7 +3,6 @@ import sendResponse from '../../utils/sendResponse';
 import { BlogServices } from './Blog.services';
 
 const createBlog = catchAsync(async (req, res) => {
- 
   const result = await BlogServices.createBlogIntoDB(req.body);
 
   sendResponse(res, {
@@ -11,7 +10,7 @@ const createBlog = catchAsync(async (req, res) => {
     success: true,
     message: 'Blog created successfully',
 
-    data: result
+    data: result,
   });
 });
 const updateSingleBlog = catchAsync(async (req, res) => {
@@ -64,5 +63,5 @@ export const BlogControllers = {
   getAllBlogs,
   updateSingleBlog,
   deleteSingleBlog,
-  getSingleBlog
+  getSingleBlog,
 };

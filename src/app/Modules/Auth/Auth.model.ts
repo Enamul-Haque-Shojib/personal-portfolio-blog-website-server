@@ -22,20 +22,19 @@ const authSchema = new Schema<TAuth, AuthStaticModel>(
       type: String,
       required: true,
     },
- 
+
     role: {
       type: String,
       enum: {
         values: ['User'],
       },
-      default: 'User'
+      default: 'User',
     },
   },
   {
     timestamps: true,
   },
 );
-
 
 authSchema.statics.isAuthExistByEmail = async function (email: string) {
   return await AuthModel.findOne({ email });
@@ -69,4 +68,3 @@ authSchema.statics.isPasswordMatched = async function (
 };
 
 export const AuthModel = model<TAuth, AuthStaticModel>('Auth', authSchema);
-

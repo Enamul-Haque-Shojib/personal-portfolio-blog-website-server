@@ -1,8 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { ProjectStaticModel, TProject } from './Project.interface';
 
-
-
 const projectSchema = new Schema<TProject, ProjectStaticModel>(
   {
     projectName: {
@@ -12,7 +10,7 @@ const projectSchema = new Schema<TProject, ProjectStaticModel>(
     },
     projectImgUrl: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
       type: String,
@@ -23,17 +21,17 @@ const projectSchema = new Schema<TProject, ProjectStaticModel>(
       required: true,
     },
     email: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     github: {
-        type: String,
-        required: true,
+      type: String,
+      required: true,
     },
     live: {
-        type: String,
-        required: true,
-    }
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -44,4 +42,7 @@ projectSchema.statics.isProjectExistsById = async function (id: string) {
   return await ProjectModel.findById(id);
 };
 
-export const ProjectModel = model<TProject, ProjectStaticModel>('Project', projectSchema);
+export const ProjectModel = model<TProject, ProjectStaticModel>(
+  'Project',
+  projectSchema,
+);

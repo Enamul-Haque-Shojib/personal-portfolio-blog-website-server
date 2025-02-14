@@ -20,7 +20,6 @@ const blogSchema = new Schema<TBlog, BlogStaticModel>(
       type: String,
       required: true,
     },
- 
   },
   {
     timestamps: true,
@@ -35,6 +34,5 @@ blogSchema.pre('find', function (next) {
 blogSchema.statics.isBlogExistsById = async function (id: string) {
   return await BlogModel.findById(id);
 };
-
 
 export const BlogModel = model<TBlog, BlogStaticModel>('Blog', blogSchema);

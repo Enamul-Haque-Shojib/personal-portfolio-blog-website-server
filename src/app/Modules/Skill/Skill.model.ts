@@ -1,9 +1,6 @@
 import { model, Schema } from 'mongoose';
 import { SkillStaticModel, TSkill } from './Skill.interface';
 
-
-
-
 const skillSchema = new Schema<TSkill, SkillStaticModel>(
   {
     title: {
@@ -16,9 +13,9 @@ const skillSchema = new Schema<TSkill, SkillStaticModel>(
       required: true,
     },
     email: {
-        type: String,
-        required: true,
-    }
+      type: String,
+      required: true,
+    },
   },
   {
     timestamps: true,
@@ -27,6 +24,5 @@ const skillSchema = new Schema<TSkill, SkillStaticModel>(
 skillSchema.statics.isSkillExistsById = async function (id: string) {
   return await SkillModel.findById(id);
 };
-
 
 export const SkillModel = model<TSkill, SkillStaticModel>('Skill', skillSchema);

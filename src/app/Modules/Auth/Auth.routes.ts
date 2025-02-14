@@ -3,9 +3,7 @@ import validateRequest from '../../middlewares/validateRequest';
 import { authValidationSchema } from './Auth.validation';
 import { AuthControllers } from './Auth.controllers';
 
-
 const router = express.Router();
-
 
 router.post(
   '/register',
@@ -32,10 +30,8 @@ router.get(
 
 router.delete(
   '/delete-auth/:id',
-  
+
   AuthControllers.deleteSingleAuth,
 );
-
-
 
 export const AuthRoutes = router;

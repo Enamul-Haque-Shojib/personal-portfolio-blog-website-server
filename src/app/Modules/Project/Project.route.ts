@@ -3,9 +3,6 @@ import validateRequest from '../../middlewares/validateRequest';
 import { ProjectValidationSchema } from './Project.validation';
 import { ProjectControllers } from './Project.controller';
 
-
-
-
 const router = express.Router();
 
 router.post(

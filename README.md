@@ -1,5 +1,3 @@
-
-
 ## Project : Parcel Management System with MERN stack
 
 ## Website Name: Parcel Warehouse
@@ -9,6 +7,7 @@
 <https://parcel-management-system-ae1b6.web.app/>
 
 ## Project Overview
+
 User can post parcel with parcel weight, price , for location longitude and latitude, booking status. Admin manage the parcel by set at delivery man. Delivery man can handle this to User by using location
 
 ## Features:

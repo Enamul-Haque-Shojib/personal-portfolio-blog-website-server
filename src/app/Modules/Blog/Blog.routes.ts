@@ -3,8 +3,6 @@ import validateRequest from '../../middlewares/validateRequest';
 import { BlogValidationSchema } from './Blog.validation';
 import { BlogControllers } from './Blog.controllers';
 
-
-
 const router = express.Router();
 
 router.post(

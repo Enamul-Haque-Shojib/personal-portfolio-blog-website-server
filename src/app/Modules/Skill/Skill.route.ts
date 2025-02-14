@@ -3,7 +3,6 @@ import validateRequest from '../../middlewares/validateRequest';
 import { SkillValidationSchema } from './Skill.validation';
 import { SkillControllers } from './Skill.controller';
 
-
 const router = express.Router();
 
 router.post(

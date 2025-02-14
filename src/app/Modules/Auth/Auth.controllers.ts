@@ -3,10 +3,7 @@ import sendResponse from '../../utils/sendResponse';
 import { AuthServices } from './Auth.services';
 
 const authRegister = catchAsync(async (req, res) => {
-  const authData = await AuthServices.authRegisterIntoDB(
-
-    req.body,
-  );
+  const authData = await AuthServices.authRegisterIntoDB(req.body);
 
   const tokenData = await AuthServices.createJwtToken({
     email: authData.email,
@@ -21,9 +18,7 @@ const authRegister = catchAsync(async (req, res) => {
 });
 
 const authLogin = catchAsync(async (req, res) => {
-  const authData = await AuthServices.authLoginIntoDB(
-    req.body,
-  );
+  const authData = await AuthServices.authLoginIntoDB(req.body);
 
   sendResponse(res, {
     statusCode: 200,
@@ -34,7 +29,6 @@ const authLogin = catchAsync(async (req, res) => {
 });
 
 const updateAuth = catchAsync(async (req, res) => {
-
   const result = await AuthServices.updateAuthIntoDB(req.params.id, req.body);
 
   sendResponse(res, {
@@ -55,7 +49,6 @@ const getAllAuths = catchAsync(async (req, res) => {
   });
 });
 
-
 const deleteSingleAuth = catchAsync(async (req, res) => {
   const result = await AuthServices.deleteAuthFromDB(req.params.id);
   sendResponse(res, {
@@ -66,14 +59,10 @@ const deleteSingleAuth = catchAsync(async (req, res) => {
   });
 });
 
-
-
-
 export const AuthControllers = {
   authRegister,
   authLogin,
   updateAuth,
   getAllAuths,
   deleteSingleAuth,
-
 };

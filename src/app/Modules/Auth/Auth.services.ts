@@ -2,39 +2,34 @@ import AppError from '../../errors/AppError';
 import { authSearchableField } from './Auth.constant';
 import { TAuth } from './Auth.interface';
 import { AuthModel } from './Auth.model';
-import {
-  createToken,
-} from './Auth.utils';
+import { createToken } from './Auth.utils';
 import QueryBuilder from '../../builder/QueryBuilder';
-
 
 import config from '../../config';
 
 const authRegisterIntoDB = async (payload: TAuth) => {
   const auth = await AuthModel.isAuthExistByEmail(payload.email);
 
-  if(auth){
-    throw new AppError(400, "Auth already exists")
+  if (auth) {
+    throw new AppError(400, 'Auth already exists');
   }
-
 
   const authData = await AuthModel.create(payload);
   return authData;
 };
 
 const authLoginIntoDB = async (payload: TAuth) => {
-  
   const auth = await AuthModel.isAuthExistByEmail(payload.email);
 
   if (!auth) {
-    throw new AppError(400, "Auth does not exist")
+    throw new AppError(400, 'Auth does not exist');
   }
   if (!(await AuthModel.isPasswordMatched(payload?.password, auth?.password)))
     throw new AppError(403, 'Password does not matched');
 
   const jwtPayload = {
     email: auth.email,
-    role: auth.role
+    role: auth.role,
   };
 
   const accessToken = createToken(
@@ -52,7 +47,7 @@ const authLoginIntoDB = async (payload: TAuth) => {
   return {
     accessToken,
     refreshToken,
-    auth
+    auth,
   };
 };
 
@@ -80,8 +75,6 @@ const deleteAuthFromDB = async (id: string) => {
   const deleteAuthInfo = await AuthModel.findByIdAndDelete(id);
   return deleteAuthInfo;
 };
-
-
 
 const createJwtToken = async (payload: { email: string }) => {
   const { email } = payload;

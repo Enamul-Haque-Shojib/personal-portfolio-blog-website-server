@@ -1,6 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { Model } from "mongoose";
-
+import { Model } from 'mongoose';
 
 export type TSkill = {
   title: string;
@@ -11,4 +10,3 @@ export type TSkill = {
 export interface SkillStaticModel extends Model<TSkill> {
   isSkillExistsById(id: string): Promise<TSkill>;
 }
-

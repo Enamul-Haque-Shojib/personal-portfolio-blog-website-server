@@ -1,10 +1,8 @@
-
-
 import AppError from '../../errors/AppError';
 import jwt, { JwtPayload } from 'jsonwebtoken';
 
 export const createToken = (
-  jwtPayload: { email: string, role: string },
+  jwtPayload: { email: string; role: string },
   secret: string,
   expiresIn: string,
 ) => {
@@ -19,8 +17,4 @@ export const verifyToken = (token: string, secret: string) => {
   } catch (err) {
     throw new AppError(401, 'Unauthorized!');
   }
-
 };
-
-
-
