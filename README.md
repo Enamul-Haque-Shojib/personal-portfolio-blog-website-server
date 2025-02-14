@@ -1,41 +1,27 @@
-## Project : Parcel Management System with MERN stack
-
-## Website Name: Parcel Warehouse
+## Project : Personal Portfolio & Blog Website
 
 ## Website Live link:
 
-<https://parcel-management-system-ae1b6.web.app/>
-
-## Project Overview
-
-User can post parcel with parcel weight, price , for location longitude and latitude, booking status. Admin manage the parcel by set at delivery man. Delivery man can handle this to User by using location
+<https://personal-portfolio-blog-website.vercel.app/>
 
 ## Features:
 
-- This project has 3 type authentication, admin, Delivery man, User and manage by dashboard
-- User can post parcel with parcel weight, price , for location longitude and latitude, booking status.
-- Initially booking status is set pending.
-- Booking status can change only Admin and deliver man
-- Admin manage the parcel by set at delivery man
-- Delivery man can handle this to User by using location
-- To know the location delivery man can see the location his dashboard
--
+- There is only one role of user who is the owner of personal portfolio
+- Every one can view the website but can not view the dashboard, this dashboard can be used by only owner
+- Owner can add skills, projects, blog
+- also can CRUD operations
+- there is a contact page where every one can send the message to the owner
 
 ### Frontend:
 
-- React js
-- Firebase
-- tailwind
-- react router dom,
-- shadcn ui,
-- apex chart,
-- react-countup,
-- react - leflet
+- Next js
+- Next Auth
+- Typescript
 
 ### Backend:
 
 - express js,
-- typescript,
+- Typescript,
 - jwt,
 - mongoose
 - zod
