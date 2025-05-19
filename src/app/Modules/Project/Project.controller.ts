@@ -61,10 +61,44 @@ const getSingleProjects = catchAsync(async (req, res) => {
   });
 });
 
+const selectOrRemoveFeatureProjects = catchAsync(async (req, res) => {
+  const result = await ProjectServices.selectOrRemoveFeatureProjectsIntoDB(req.params.id, req.body);
+
+  sendResponse(res, {
+    statusCode: 201,
+    success: true,
+    message: 'Features Projects are added successfully',
+    data: result,
+  });
+});
+// const removeFeatureProjects = catchAsync(async (req, res) => {
+//   const result = await ProjectServices.removeFeatureProjectsIntoDB(req.params.id, req.body);
+
+//   sendResponse(res, {
+//     statusCode: 201,
+//     success: true,
+//     message: 'Features Projects are removed successfully',
+//     data: result,
+//   });
+// });
+
+const getFeatureProjects = catchAsync(async (req, res) => {
+  const result = await ProjectServices.getFeatureProjectsIntoDB();
+
+  sendResponse(res, {
+    statusCode: 201,
+    success: true,
+    message: 'Features Projects are retrieved successfully',
+    data: result,
+  });
+});
+
 export const ProjectControllers = {
   createProject,
   updateSingleProject,
   deleteSingleProject,
   getAllProjects,
   getSingleProjects,
+  getFeatureProjects,
+  selectOrRemoveFeatureProjects
 };

@@ -24,6 +24,10 @@ const projectSchema = new Schema<TProject, ProjectStaticModel>(
       type: String,
       required: true,
     },
+    isSelected: {
+      type: Boolean,
+      default: false,
+    },
     github: {
       type: String,
       required: true,

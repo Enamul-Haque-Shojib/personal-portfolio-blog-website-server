@@ -22,4 +22,10 @@ router.delete('/delete-project/:id', ProjectControllers.deleteSingleProject);
 router.get('/', ProjectControllers.getAllProjects);
 router.get('/get-single-project/:id', ProjectControllers.getSingleProjects);
 
+router.patch('/feature-project/:id', ProjectControllers.selectOrRemoveFeatureProjects);
+// router.patch('/remove-feature-project/:id', ProjectControllers.removeFeatureProjects);
+
+
+router.get('/get-feature-projects', ProjectControllers.getFeatureProjects);
+
 export const ProjectRoutes = router;

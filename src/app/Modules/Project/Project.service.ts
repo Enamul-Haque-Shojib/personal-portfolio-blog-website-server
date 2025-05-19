@@ -33,8 +33,24 @@ const getAllProjectsIntoDB = async () => {
   const result = await ProjectModel.find();
   return result;
 };
+
 const getSingleProjectIntoDB = async (id: string) => {
   const result = await ProjectModel.find({ _id: id });
+  return result;
+};
+
+const selectOrRemoveFeatureProjectsIntoDB = async (id:string, payload: {isSelected:boolean}) => {
+  
+  const result = await ProjectModel.findByIdAndUpdate(id, payload);
+  return result;
+};
+// const removeFeatureProjectsIntoDB = async (id:string, payload: {isSelected:boolean}) => {
+//   const result = await ProjectModel.findByIdAndUpdate(id, payload);
+//   return result;
+// };
+
+const getFeatureProjectsIntoDB = async () => {
+  const result = await ProjectModel.find({ isSelected: true });
   return result;
 };
 
@@ -44,4 +60,6 @@ export const ProjectServices = {
   deleteSingleProjectIntoDB,
   getAllProjectsIntoDB,
   getSingleProjectIntoDB,
+  getFeatureProjectsIntoDB,
+  selectOrRemoveFeatureProjectsIntoDB
 };

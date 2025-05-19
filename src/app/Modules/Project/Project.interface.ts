@@ -6,6 +6,7 @@ export type TProject = {
   projectImgUrl: string;
   description: string;
   technologies: string[];
+  isSelected: boolean;
   email: string;
   github: string;
   live: string;
